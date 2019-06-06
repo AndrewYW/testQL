@@ -1,7 +1,7 @@
 module Types
   class BookType < Types::BaseObject
     field :author, Types::AuthorType, null: false
-    field :genre, Types::Enums::Genre, null: false
+    field :genre, Enums::Genre, null: false
 
     field :id, ID, null: false
 
