@@ -12,8 +12,8 @@
 
 FactoryBot.define do
   factory :author do
-    first_name { "MyString" }
-    last_name { "MyString" }
-    date_of_birth { "2019-06-06" }
+    sequence(:first_name) { |n| "John (#{n})"}
+    sequence(:last_name) { |n| "Smith (#{n})" }
+    sequence(:date_of_birth) { 40.years.ago }
   end
 end
