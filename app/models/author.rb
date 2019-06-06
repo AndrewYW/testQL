@@ -11,5 +11,7 @@
 #
 
 class Author < ApplicationRecord
+  validates :first_name, :last_name, presence: true
+  validates_uniqueness_of :first_name, :scope => :last_name
   has_many :books
 end
