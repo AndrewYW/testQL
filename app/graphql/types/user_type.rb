@@ -7,7 +7,7 @@ module Types
     field :books_count, Integer, null: true
 
     def books_count
-      self.books.size
+      object.books.size
     end
   end
 end
