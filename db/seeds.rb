@@ -5,16 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Book.destroy_all
-User.destroy_all
-
-ActiveRecord::Base.connection.tables.each do |t|
-  ActiveRecord::Base.connection.reset_pk_sequence!(t)
-end
-
-5.times do
-  user = User.create(name: Faker::Name.name, email: Faker::Internet.email)
-  5.times do
-    user.books.create(title: Faker::Book.title)
-  end
-end
